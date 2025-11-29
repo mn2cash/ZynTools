@@ -44,6 +44,50 @@
     ]
   }
   </script>
+  <style>
+    :root {
+      --ui-bg: #0a0f1f;
+      --ui-card: #111827;
+      --ui-border: #1f2937;
+      --ui-radius: 12px;
+      --ui-pad: 18px;
+      --ui-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+      --ui-text: #e5e7eb;
+      --ui-muted: #94a3b8;
+    }
+    body {
+      background: radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.08), transparent 30%), radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 32%), var(--ui-bg);
+      color: var(--ui-text);
+      margin: 0;
+    }
+    main, .page {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 6% 72px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    section { margin: 0; }
+    .card, .panel, .info-card, .calculator-card, .output, .guide, .saved, .faq, .faq-section, .controls, .chart-card, .map-card, .table-card, .contact, .cta, .hero-panel, .shell {
+      background: var(--ui-card);
+      border: 1px solid var(--ui-border);
+      border-radius: var(--ui-radius);
+      box-shadow: var(--ui-shadow);
+    }
+    .card, .panel, .info-card, .calculator-card, .output, .guide, .saved, .faq, .faq-section, .controls, .chart-card, .map-card, .table-card {
+      padding: var(--ui-pad);
+    }
+    .tool-grid, .grid, .info-grid, .cards-grid, .layout-grid, .saved-list, .results-grid, .deal-grid, #deal-grid, .section-list, .faq-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .footer, footer { background: #0b1227; }
+    p, h1, h2, h3 { color: inherit; }
+  </style>
 </head>
 <body>
   <div class="bg-blur blur-a"></div>
@@ -103,6 +147,20 @@
         </ul>
       </div>
     </section>
+
+    <div class="ad-slot" style="margin:28px 0;">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3119063412629995"
+           crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-ef+6k-30-ac+ty"
+           data-ad-client="ca-pub-3119063412629995"
+           data-ad-slot="3082907022"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     <section class="tools" id="tools">
       <div class="section-head">

@@ -30,6 +30,42 @@
     "author": "Zyntriax"
   }
   </script>
+  <style>
+    :root { --ui-bg:#0a0f1f; --ui-card:#111827; --ui-border:#1f2937; --ui-radius:12px; --ui-pad:18px; --ui-shadow:0 10px 40px rgba(0,0,0,0.45); --ui-text:#e5e7eb; --ui-muted:#94a3b8; --ui-accent:#06b6d4; }
+    body { background: radial-gradient(circle at 20% 20%, rgba(6,182,212,0.08), transparent 30%), radial-gradient(circle at 80% 0%, rgba(139,92,246,0.08), transparent 32%), var(--ui-bg); color: var(--ui-text); margin: 0; font-family: "Inter","Segoe UI",system-ui,-apple-system,sans-serif; line-height: 1.6; }
+    .page { max-width: 1200px; margin: 0 auto; padding: 40px 6% 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; }
+    .card, .faq.card { background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); box-shadow: var(--ui-shadow); padding: var(--ui-pad); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .results { background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); box-shadow: var(--ui-shadow); padding: var(--ui-pad); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .results.results--compact { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    .faq__items details { background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); padding: 12px 14px; }
+    .footer__links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .ad-slot { background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); box-shadow: var(--ui-shadow); padding: 12px; }
+    .footer { background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); box-shadow: var(--ui-shadow); padding: 18px; color: var(--ui-text); }
+    p, h1, h2, h3 { color: inherit; margin: 0 0 8px; }
+    h1, h2 { line-height: 1.25; }
+    .hero__text { display: grid; gap: 10px; }
+    .eyebrow { color: var(--ui-accent); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+    .field input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--ui-border); background: #0f172a; color: var(--ui-text); }
+    .field input:focus { outline: 2px solid rgba(6,182,212,0.35); border-color: rgba(6,182,212,0.6); }
+    .label { color: var(--ui-muted); font-weight: 600; }
+    .value { font-size: 24px; font-weight: 700; color: var(--ui-text); }
+    a { color: var(--ui-accent); }
+  </style>
+  <style>
+    /* Footer and bottom spacing overrides to match dark UI */
+    .footer { padding: 18px; border-top: 1px solid var(--ui-border); color: var(--ui-text); }
+    .footer a { color: var(--ui-text); text-decoration: none; }
+    .footer a:hover { color: var(--ui-accent); }
+    .footer p { margin: 6px 0 0; color: var(--ui-muted); }
+    .footer__links { gap: 10px; background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); padding: 12px; box-shadow: var(--ui-shadow); }
+    /* FAQ box alignment */
+    .faq.card { padding: 20px; }
+    .faq__items details { background: var(--ui-card); border: 1px solid var(--ui-border); border-radius: var(--ui-radius); padding: 12px 14px; }
+    .faq__items summary { color: var(--ui-text); cursor: pointer; font-weight: 700; }
+    .faq__items p { color: var(--ui-muted); margin: 8px 0 0; }
+  </style>
 </head>
 <body>
   <div class="background-accent" aria-hidden="true"></div>
@@ -102,6 +138,20 @@
         </div>
       </section>
     </main>
+
+    <div class="ad-slot" style="margin:28px 0;">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3119063412629995"
+           crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-ef+6k-30-ac+ty"
+           data-ad-client="ca-pub-3119063412629995"
+           data-ad-slot="3082907022"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     <section class="info card">
       <div class="card__header">
