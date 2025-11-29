@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3119063412629995" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZynTools Tip Calculator</title>
+  <meta name="description" content="Split bills effortlessly with tip suggestions, rounding, and per-person totals in the ZynTools Tip Calculator.">
+  <meta name="keywords" content="tip calculator, split bill, gratuity calculator, tip per person">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Tip Calculator - ZynTools">
+  <meta property="og:description" content="Split bills effortlessly with tip suggestions, rounding, and per-person totals in the ZynTools Tip Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/Tip-Calculator/">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-tip.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tip Calculator - ZynTools">
+  <meta name="twitter:description" content="Split bills effortlessly with tip suggestions, rounding, and per-person totals in the ZynTools Tip Calculator.">
+  <link rel="canonical" href="https://yourdomain.com/Tip-Calculator/">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tip Calculator - ZynTools",
+    "description": "Calculate tip per person and total per person with rounding and presets.",
+    "url": "https://yourdomain.com/Tip-Calculator/",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "author": { "@type": "Organization", "name": "Zyntriax" }
+  }
+  </script>
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <p class="eyebrow">ZynTools</p>
+      <h1>Tip Calculator</h1>
+      <p class="lede">Choose a tip, split the bill, and toggle rounding to keep payments tidy.</p>
+      <div class="grid two">
+        <div class="card inputs">
+          <label class="field">
+            <span>Bill amount</span>
+            <input id="billAmount" type="number" min="0" step="0.01" placeholder="£120.00">
+          </label>
+          <div class="field presets">
+            <span>Quick tips</span>
+            <div class="chips">
+              <button class="chip" data-tip="10">10%</button>
+              <button class="chip" data-tip="15">15%</button>
+              <button class="chip" data-tip="20">20%</button>
+            </div>
+          </div>
+          <label class="field">
+            <span>Tip percentage</span>
+            <div class="slider-row">
+              <input id="tipRange" type="range" min="0" max="30" step="1" value="15">
+              <span id="tipLabel" class="pill">15%</span>
+            </div>
+          </label>
+          <label class="field">
+            <span>People</span>
+            <input id="people" type="number" min="1" step="1" value="2">
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="roundUp">
+            <span class="switch"></span>
+            <span class="toggle-label">Round up totals</span>
+          </label>
+          <button id="calcBtn" type="button">Calculate</button>
+          <p id="tipError" class="error"></p>
+        </div>
+        <div class="card result">
+          <div class="result-row">
+            <div>
+              <p class="label">Tip per person</p>
+              <p class="value" id="tipPerPerson">£0.00</p>
+            </div>
+            <div>
+              <p class="label">Total per person</p>
+              <p class="value" id="totalPerPerson">£0.00</p>
+            </div>
+          </div>
+          <div class="summary">
+            <h3>Breakdown</h3>
+            <p class="summary-text" id="summaryText">Set values to see the split.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

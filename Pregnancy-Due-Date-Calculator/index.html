@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3119063412629995" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZynTools Pregnancy Due Date Calculator</title>
+  <meta name="description" content="Estimate your pregnancy due date, current trimester, and week number with a gentle ZynTools calculator.">
+  <meta name="keywords" content="due date calculator, pregnancy weeks, trimester calculator, LMP calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Pregnancy Due Date Calculator - ZynTools">
+  <meta property="og:description" content="Estimate your due date, trimester, and week with a calm, clear interface.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/Pregnancy-Due-Date-Calculator/">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-due.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pregnancy Due Date Calculator - ZynTools">
+  <meta name="twitter:description" content="Estimate your due date, trimester, and week with a calm, clear interface.">
+  <link rel="canonical" href="https://yourdomain.com/Pregnancy-Due-Date-Calculator/">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Pregnancy Due Date Calculator - ZynTools",
+    "description":"Estimate due date, trimester, and week based on LMP.",
+    "url":"https://yourdomain.com/Pregnancy-Due-Date-Calculator/",
+    "operatingSystem":"All",
+    "applicationCategory":"HealthApplication",
+    "author":{"@type":"Organization","name":"Zyntriax"}
+  }
+  </script>
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <p class="eyebrow">ZynTools</p>
+      <h1>Pregnancy Due Date Calculator</h1>
+      <p class="lede">Select the first day of your last menstrual period to estimate your due date, week, and trimester.</p>
+      <div class="grid two">
+        <div class="card">
+          <label class="field">
+            <span>Last menstrual period (LMP)</span>
+            <input id="lmp" type="date">
+          </label>
+          <button id="calcBtn" type="button">Calculate</button>
+          <p class="error" id="errorMsg"></p>
+        </div>
+        <div class="card result">
+          <div class="result-row">
+            <div>
+              <p class="label">Estimated due date</p>
+              <p class="value" id="dueDate">--</p>
+            </div>
+            <div>
+              <p class="label">Current week</p>
+              <p class="value" id="week">--</p>
+            </div>
+            <div>
+              <p class="label">Trimester</p>
+              <p class="value" id="trimester">--</p>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-bar">
+              <div id="timelineFill" class="timeline-fill"></div>
+            </div>
+            <div class="timeline-labels">
+              <span>0w</span><span>12w</span><span>24w</span><span>40w</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

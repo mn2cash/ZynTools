@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3119063412629995" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZynTools BMR & TDEE Calculator</title>
+  <meta name="description" content="Calculate BMR, TDEE, and calorie targets for weight goals with the ZynTools BMR & TDEE Calculator.">
+  <meta name="keywords" content="BMR calculator, TDEE calculator, calorie needs, mifflin st jeor">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="BMR & TDEE Calculator - ZynTools">
+  <meta property="og:description" content="Calculate daily calories, weight loss, and gain targets with TDEE multipliers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/BMR-TDEE-Calculator/">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-bmr.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BMR & TDEE Calculator - ZynTools">
+  <meta name="twitter:description" content="Calculate daily calories, weight loss, and gain targets with TDEE multipliers.">
+  <link rel="canonical" href="https://yourdomain.com/BMR-TDEE-Calculator/">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"BMR & TDEE Calculator - ZynTools",
+    "description":"Calculate BMR, TDEE, and calorie targets.",
+    "url":"https://yourdomain.com/BMR-TDEE-Calculator/",
+    "operatingSystem":"All",
+    "applicationCategory":"HealthApplication",
+    "author":{"@type":"Organization","name":"Zyntriax"}
+  }
+  </script>
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <p class="eyebrow">ZynTools</p>
+      <h1>BMR & TDEE Calculator</h1>
+      <p class="lede">Estimate daily calories using Mifflin-St Jeor and see targets for maintenance, loss, and gain.</p>
+      <div class="grid two">
+        <div class="card">
+          <label class="field">Gender
+            <select id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+          <label class="field">Age
+            <input id="age" type="number" min="0" step="1" placeholder="28">
+          </label>
+          <label class="field">Height (cm)
+            <input id="height" type="number" min="0" step="1" placeholder="175">
+          </label>
+          <label class="field">Weight (kg)
+            <input id="weight" type="number" min="0" step="0.1" placeholder="70">
+          </label>
+          <label class="field">Activity level
+            <select id="activity">
+              <option value="1.2">Sedentary</option>
+              <option value="1.375">Lightly active</option>
+              <option value="1.55">Moderately active</option>
+              <option value="1.725">Very active</option>
+              <option value="1.9">Super active</option>
+            </select>
+          </label>
+          <button id="calcBtn" type="button">Calculate</button>
+          <p class="error" id="errorMsg"></p>
+        </div>
+        <div class="card result">
+          <div class="result-row">
+            <div>
+              <p class="label">BMR</p>
+              <p class="value" id="bmr">0 kcal</p>
+            </div>
+            <div>
+              <p class="label">TDEE</p>
+              <p class="value" id="tdee">0 kcal</p>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="bar">
+              <span class="bar-label">Weight loss</span>
+              <div class="bar-track"><div id="lossBar" class="bar-fill"></div></div>
+              <span id="lossVal" class="bar-value">0 kcal</span>
+            </div>
+            <div class="bar">
+              <span class="bar-label">Maintenance</span>
+              <div class="bar-track"><div id="maintBar" class="bar-fill"></div></div>
+              <span id="maintVal" class="bar-value">0 kcal</span>
+            </div>
+            <div class="bar">
+              <span class="bar-label">Gain</span>
+              <div class="bar-track"><div id="gainBar" class="bar-fill"></div></div>
+              <span id="gainVal" class="bar-value">0 kcal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

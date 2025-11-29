@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3119063412629995" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZynTools Retirement Calculator</title>
+  <meta name="description" content="Project your retirement balance with contributions, returns, and growth breakdown in the ZynTools Retirement Calculator.">
+  <meta name="keywords" content="retirement calculator, investment growth, savings calculator, future value">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Retirement Calculator - ZynTools">
+  <meta property="og:description" content="Estimate retirement balance with contributions, returns, and simple trend line.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/Retirement-Calculator/">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-retire.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retirement Calculator - ZynTools">
+  <meta name="twitter:description" content="Estimate retirement balance with contributions, returns, and simple trend line.">
+  <link rel="canonical" href="https://yourdomain.com/Retirement-Calculator/">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Retirement Calculator - ZynTools",
+    "description":"Project retirement balances with contributions and returns.",
+    "url":"https://yourdomain.com/Retirement-Calculator/",
+    "operatingSystem":"All",
+    "applicationCategory":"FinanceApplication",
+    "author":{"@type":"Organization","name":"Zyntriax"}
+  }
+  </script>
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <p class="eyebrow">ZynTools</p>
+      <h1>Retirement Calculator</h1>
+      <p class="lede">Project your nest egg with monthly contributions, expected returns, and a simple trend line.</p>
+      <div class="grid two">
+        <div class="card">
+          <label class="field">Current age
+            <input id="currentAge" type="number" min="0" step="1" placeholder="30">
+          </label>
+          <label class="field">Retirement age
+            <input id="retireAge" type="number" min="0" step="1" placeholder="65">
+          </label>
+          <label class="field">Current savings
+            <input id="savings" type="number" min="0" step="100" placeholder="15000">
+          </label>
+          <label class="field">Monthly contribution
+            <input id="contribution" type="number" min="0" step="50" placeholder="400">
+          </label>
+          <label class="field">Expected annual return (%)
+            <input id="returnRate" type="number" min="0" step="0.1" placeholder="6">
+          </label>
+          <button id="calcBtn" type="button">Calculate</button>
+          <p class="error" id="errorMsg"></p>
+        </div>
+        <div class="card result">
+          <div class="result-row">
+            <div>
+              <p class="label">Projected balance</p>
+              <p class="value" id="balance">£0</p>
+            </div>
+            <div>
+              <p class="label">Total contributions</p>
+              <p class="value" id="contribs">£0</p>
+            </div>
+            <div>
+              <p class="label">Total growth</p>
+              <p class="value" id="growth">£0</p>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="trend" height="160"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

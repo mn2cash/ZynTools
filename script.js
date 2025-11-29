@@ -1,11 +1,19 @@
-const tools = [
+﻿const tools = [
   { name: "Live Crypto Tracker", slug: "./LIVE-CRYPTO-PRICE-TRACKER/index.html", icon: "🪙", type: "tracker" },
   { name: "Gold & Silver Price Tracker", slug: "./GOLD---SILVER-PRICE-TRACKER/index.html", icon: "🥇", type: "tracker" },
   { name: "Currency Converter", slug: "./currency/index.html", icon: "💱", type: "converter" },
   { name: "BMI Calculator", slug: "./BMI-CALCULATOR/index.html", icon: "⚖️", type: "calculator" },
-  { name: "Grade Calculator", slug: "./GCSE-A-LEVEL-GRADE-CALCULATOR/index.html", icon: "📊", type: "calculator" },
+  { name: "Grade Calculator", slug: "./GCSE-A-LEVEL-GRADE-CALCULATOR/index.html", icon: "🎓", type: "calculator" },
   { name: "AI Name Generator", slug: "./AI-NAME-GENERATOR/index.html", icon: "✨", type: "generator" },
-  { name: "Petrol Price Tracker (UK)", slug: "./PETROL-PRICE-TRACKER--UK-/index.html", icon: "⛽", type: "tracker" }
+  { name: "Petrol Price Tracker (UK)", slug: "./PETROL-PRICE-TRACKER--UK-/index.html", icon: "⛽", type: "tracker" },
+  { name: "Loan Repayment Calculator", slug: "./Loan-Repayment-Calculator/index.html", icon: "🏦", type: "calculator" },
+  { name: "Tip Calculator", slug: "./Tip-Calculator/index.html", icon: "💸", type: "calculator" },
+  { name: "Age Calculator", slug: "./Age-Calculator/index.html", icon: "🎂", type: "calculator" },
+  { name: "Pregnancy Due Date Calculator", slug: "./Pregnancy-Due-Date-Calculator/index.html", icon: "👶", type: "calculator" },
+  { name: "BMR & TDEE Calculator", slug: "./BMR-TDEE-Calculator/index.html", icon: "💪", type: "calculator" },
+  { name: "Retirement Calculator", slug: "./Retirement-Calculator/index.html", icon: "📈", type: "calculator" },
+  { name: "Compound Interest Calculator", slug: "./Compound-Interest-Calculator/index.html", icon: "📊", type: "calculator" },
+  { name: "Mortgage Affordability Calculator", slug: "./Mortgage-Affordability-Calculator/index.html", icon: "🏠", type: "calculator" }
 ];
 
 const typeDescriptions = {
@@ -107,3 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setYear();
   cardHoverEffects();
 });
+
+
+
