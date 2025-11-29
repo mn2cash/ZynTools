@@ -5,8 +5,6 @@ const tools = [
   { name: "BMI Calculator", slug: "./BMI-CALCULATOR/index.html", icon: "⚖️", type: "calculator" },
   { name: "Grade Calculator", slug: "./GCSE-A-LEVEL-GRADE-CALCULATOR/index.html", icon: "📊", type: "calculator" },
   { name: "AI Name Generator", slug: "./AI-NAME-GENERATOR/index.html", icon: "✨", type: "generator" },
-  { name: "Amazon Deal Finder (Demo)", slug: "./Amazon-Deal-Finder/index.html", icon: "🛒", type: "finder" },
-  { name: "Product Idea Generator", slug: "./AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html", icon: "💡", type: "generator" },
   { name: "Petrol Price Tracker (UK)", slug: "./PETROL-PRICE-TRACKER--UK-/index.html", icon: "⛽", type: "tracker" }
 ];
 
