@@ -1,0 +1,198 @@
+const FUEL_LABELS = {
+  unleaded95: "Unleaded (95)",
+  super99: "Super Unleaded (99)",
+  diesel: "Diesel",
+  premiumDiesel: "Premium Diesel",
+};
+
+const LINE_COLOURS = {
+  unleaded95: "rgba(94, 160, 255, 0.9)",
+  super99: "rgba(244, 114, 182, 0.9)",
+  diesel: "rgba(74, 222, 128, 0.9)",
+  premiumDiesel: "rgba(248, 113, 113, 0.9)",
+};
+
+// Demo dataset used for offline rendering. Values are pence per litre.
+const demoData = {
+  updatedAt: "2025-02-01T07:15:00Z",
+  prices: {
+    unleaded95: { today: 146.7, yesterday: 147.2 },
+    super99: { today: 156.9, yesterday: 157.4 },
+    diesel: { today: 152.8, yesterday: 153.0 },
+    premiumDiesel: { today: 164.1, yesterday: 164.8 },
+  },
+  history: [
+    { date: "2025-01-26", unleaded95: 147.9, super99: 158.4, diesel: 153.9, premiumDiesel: 165.2 },
+    { date: "2025-01-27", unleaded95: 147.6, super99: 158.0, diesel: 153.6, premiumDiesel: 165.0 },
+    { date: "2025-01-28", unleaded95: 147.4, super99: 157.8, diesel: 153.3, premiumDiesel: 164.7 },
+    { date: "2025-01-29", unleaded95: 147.2, super99: 157.5, diesel: 153.1, premiumDiesel: 164.5 },
+    { date: "2025-01-30", unleaded95: 147.0, super99: 157.2, diesel: 152.9, premiumDiesel: 164.4 },
+    { date: "2025-01-31", unleaded95: 146.9, super99: 157.0, diesel: 152.8, premiumDiesel: 164.2 },
+    { date: "2025-02-01", unleaded95: 146.7, super99: 156.9, diesel: 152.8, premiumDiesel: 164.1 },
+  ],
+  stations: [
+    { name: "Shell - Old Street", price: 143.9, distance: 1.2 },
+    { name: "BP - City Road", price: 142.8, distance: 1.6 },
+    { name: "Esso - Kingsland", price: 144.2, distance: 2.1 },
+  ],
+};
+
+// Data URL lets us call fetch() even in a static demo. Use a Unicode-safe base64 encoder.
+const DATA_URL = "data:application/json;base64," + toBase64JSON(demoData);
+let chartInstance;
+
+document.addEventListener("DOMContentLoaded", init);
+
+async function init() {
+  const data = await fetchPriceData();
+  renderUpdatedAt(data.updatedAt);
+  renderFuelCards(data);
+  renderStations(data.stations);
+  renderChart(data.history);
+}
+
+async function fetchPriceData() {
+  try {
+    const response = await fetch(DATA_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error("Bad response");
+    return await response.json();
+  } catch (error) {
+    console.warn("Falling back to demo data:", error);
+    return demoData;
+  }
+}
+
+function toBase64JSON(value) {
+  // Ensures Unicode strings (e.g., en-dashes) encode without throwing.
+  const json = JSON.stringify(value);
+  return btoa(unescape(encodeURIComponent(json)));
+}
+
+function renderUpdatedAt(isoDate) {
+  const el = document.getElementById("updatedAt");
+  if (!el) return;
+  if (!isoDate) {
+    el.textContent = "--";
+    return;
+  }
+  const formatted = new Date(isoDate).toLocaleString("en-GB", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  el.textContent = formatted + " GMT";
+}
+
+function renderFuelCards(data) {
+  const container = document.getElementById("fuelCards");
+  container.innerHTML = "";
+  const lastWeekEntry = data.history?.[0];
+
+  Object.keys(FUEL_LABELS).forEach((key) => {
+    const today = data.prices?.[key]?.today ?? 0;
+    const yesterday = data.prices?.[key]?.yesterday ?? today;
+    const lastWeek = lastWeekEntry?.[key] ?? today;
+    const dailyDiff = today - yesterday;
+    const weeklyDiff = today - lastWeek;
+
+    const card = document.createElement("article");
+    card.className = "fuel-card";
+    card.innerHTML = `
+      <header>
+        <div class="fuel-name">${FUEL_LABELS[key]}</div>
+        <span class="badge badge-ghost">ppl</span>
+      </header>
+      <div class="price">${today.toFixed(1)} <span>p</span></div>
+      <div class="delta-group">
+        ${buildDelta("Yesterday", dailyDiff)}
+        ${buildDelta("Weekly", weeklyDiff)}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function buildDelta(label, diff) {
+  const direction = diff < 0 ? "positive" : diff > 0 ? "negative" : "";
+  const sign = diff > 0 ? "+" : "";
+  return `
+    <div class="delta">
+      <span class="delta-title">${label} diff</span>
+      <span class="delta-value ${direction}">
+        <span class="trend-dot"></span>${sign}${diff.toFixed(1)}p
+      </span>
+    </div>
+  `;
+}
+
+function renderStations(stations = []) {
+  const list = document.getElementById("stationList");
+  list.innerHTML = "";
+  stations.forEach((station) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <div>
+        <strong>${station.name}</strong>
+        <p>${station.distance.toFixed(1)} km away</p>
+      </div>
+      <div class="delta-value positive">${station.price.toFixed(1)}p</div>
+    `;
+    list.appendChild(li);
+  });
+  if (!stations.length) {
+    const li = document.createElement("li");
+    li.textContent = "No station data available in demo mode.";
+    list.appendChild(li);
+  }
+}
+
+function renderChart(history = []) {
+  const ctx = document.getElementById("historyChart").getContext("2d");
+  const labels = history.map((point) => point.date);
+  const datasets = Object.keys(FUEL_LABELS).map((key) => ({
+    label: FUEL_LABELS[key],
+    data: history.map((point) => point[key]),
+    borderColor: LINE_COLOURS[key],
+    backgroundColor: LINE_COLOURS[key],
+    tension: 0.35,
+    borderWidth: 2,
+    pointRadius: 3,
+  }));
+
+  if (chartInstance) {
+    chartInstance.destroy();
+  }
+
+  chartInstance = new Chart(ctx, {
+    type: "line",
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      resizeDelay: 120,
+      animation: false,
+      scales: {
+        x: {
+          grid: { color: "rgba(255,255,255,0.05)" },
+          ticks: { color: "#9eb1d3" },
+        },
+        y: {
+          grid: { color: "rgba(255,255,255,0.05)" },
+          ticks: { color: "#9eb1d3" },
+          title: {
+            display: true,
+            text: "Pence per litre",
+            color: "#9eb1d3",
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          labels: { color: "#e7edf7" },
+        },
+      },
+    },
+  });
+}

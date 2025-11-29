@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO metadata -->
+  <title>BMI Calculator - Body Mass Index Chart & Healthy Range</title>
+  <meta name="description" content="Calculate your BMI instantly with this modern Body Mass Index calculator. View your BMI category, see your position on the chart, and explore the healthy weight range for your height.">
+  <meta name="keywords" content="BMI calculator, body mass index chart, healthy weight range, BMI categories, BMI scale">
+  <meta name="author" content="BMI Calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="BMI Calculator - Body Mass Index Chart & Healthy Range">
+  <meta property="og:description" content="Check your BMI in seconds, view your category on the BMI scale, and see the healthy weight range tailored to your height.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/bmi-calculator">
+  <meta property="og:image" content="https://example.com/assets/bmi-calculator-card.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BMI Calculator - Body Mass Index Chart & Healthy Range">
+  <meta name="twitter:description" content="Instant BMI calculator with chart, categories, and healthy weight range tailored to your height.">
+  <link rel="canonical" href="https://example.com/bmi-calculator">
+  <!-- Cache hint: set long-lived caching for static assets like styles.css and script.js -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BMI Calculator - Body Mass Index Chart & Healthy Range",
+    "description": "Calculate BMI, check your category, and view the healthy weight range with a responsive BMI calculator and chart.",
+    "url": "https://example.com/bmi-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Zyntriax"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Health Toolkit</p>
+      <h1>BMI Calculator - Check Your Body Mass Index</h1>
+      <p class="lede">Track your Body Mass Index, understand your category on the BMI scale, and see the healthy weight range tailored to your height.</p>
+    </header>
+
+    <main class="main-content">
+      <section class="card calculator-card">
+        <section class="calculator">
+          <div class="inputs">
+            <label class="field">
+              <span>Height (cm)</span>
+              <input type="number" id="height" inputmode="decimal" min="50" max="250" placeholder="170" aria-label="Height in centimeters">
+            </label>
+            <label class="field">
+              <span>Weight (kg)</span>
+              <input type="number" id="weight" inputmode="decimal" min="20" max="300" placeholder="65" aria-label="Weight in kilograms">
+            </label>
+          </div>
+          <button id="calculate" type="button">Calculate BMI</button>
+        </section>
+
+        <section class="results" aria-live="polite">
+          <div class="result-item">
+            <p class="label">BMI</p>
+            <p class="value" id="bmi-value">--</p>
+          </div>
+          <div class="result-item">
+            <p class="label">Category</p>
+            <p class="pill" id="bmi-category">Awaiting input</p>
+          </div>
+          <div class="result-item">
+            <p class="label">Healthy weight range</p>
+            <p class="value" id="healthy-range">-- kg</p>
+          </div>
+        </section>
+
+        <section class="chart">
+          <div class="chart-header">
+            <p>BMI scale</p>
+            <span id="marker-label">--</span>
+          </div>
+          <div class="scale">
+            <div class="segment underweight">Underweight</div>
+            <div class="segment healthy">Healthy</div>
+            <div class="segment overweight">Overweight</div>
+            <div class="segment obese">Obese</div>
+            <div class="indicator" id="indicator">
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="scale-legend">
+            <span>&lt;18.5</span>
+            <span>18.5</span>
+            <span>25</span>
+            <span>30</span>
+            <span>&gt;40</span>
+          </div>
+        </section>
+      </section>
+
+      <section class="info-grid">
+        <div class="info-block">
+          <h2>How to use the BMI tool</h2>
+          <p>Enter your height in centimeters and weight in kilograms, then tap calculate. Your BMI, category, and a healthy weight range for your height will appear instantly.</p>
+        </div>
+        <div class="info-block">
+          <h2>What is BMI?</h2>
+          <p>Body Mass Index is a quick screening metric comparing weight to height. It helps gauge if you are underweight, healthy, overweight, or obese based on population studies.</p>
+        </div>
+        <div class="info-block">
+          <h2>BMI categories</h2>
+          <p>The scale highlights four bands: Underweight (below 18.5), Healthy (18.5-24.9), Overweight (25-29.9), and Obese (30+). Your marker shows exactly where you land.</p>
+        </div>
+      </section>
+
+      <!-- FAQ content for SEO -->
+      <section class="faq">
+        <h2>Frequently asked questions</h2>
+        <details open>
+          <summary>How does this tool work?</summary>
+          <p>The calculator divides your weight in kilograms by your height in meters squared, then places the result on the BMI scale with an instant category.</p>
+        </details>
+        <details>
+          <summary>Is this tool free?</summary>
+          <p>Yes, the BMI calculator is free to use and optimized for mobile and desktop devices.</p>
+        </details>
+        <details>
+          <summary>How often does the data update?</summary>
+          <p>Results update immediately whenever you change your height or weight and press calculate or hit Enter.</p>
+        </details>
+        <details>
+          <summary>Is this accurate?</summary>
+          <p>BMI is a general guideline and does not account for muscle mass or medical conditions. For personalized advice, consult a healthcare professional.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footnote">
+      <div class="footer-tools">
+        <p class="tools-title">Other tools:</p>
+        <div class="tool-links">
+          <a href="../LIVE-CRYPTO-PRICE-TRACKER/index.html">Crypto Price Tracker</a>
+          <a href="../GOLD---SILVER-PRICE-TRACKER/index.html">Gold & Silver Price Tracker</a>
+          <a href="../PETROL-PRICE-TRACKER--UK-/index.html">Petrol Price Tracker</a>
+          <a href="../BMI-CALCULATOR/index.html" aria-current="page">BMI Calculator</a>
+          <a href="../GCSE-A-LEVEL-GRADE-CALCULATOR/index.html">Grade Calculator</a>
+          <a href="../AI-NAME-GENERATOR/index.html">AI Name Generator</a>
+          <a href="../Amazon-Deal-Finder/index.html">Amazon Deal Finder</a>
+          <a href="../AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html">Product Idea Generator</a>
+        </div>
+      </div>
+      <p>Use this tool for guidance only. For medical advice, consult a healthcare professional.</p>
+    </footer>
+  </div>
+
+  <!-- FAQ schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this tool work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator divides your weight in kilograms by your height in meters squared, then places the result on the BMI scale with an instant category."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this tool free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the BMI calculator is free to use and optimized for mobile and desktop devices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does the data update?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Results update immediately whenever you change your height or weight and press calculate or hit Enter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI is a general guideline and does not account for muscle mass or medical conditions. For personalized advice, consult a healthcare professional."
+        }
+      }
+    ]
+  }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

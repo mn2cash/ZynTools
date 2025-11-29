@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Bitcoin & Crypto Prices — Updated Every 10 Seconds | Zyntriax</title>
+  <meta name="description" content="Track live Bitcoin, Ethereum, Solana, Dogecoin, XRP, BNB, and Cardano prices with auto-refresh every 10 seconds. Real-time crypto dashboard with market caps and 24h change.">
+  <meta name="keywords" content="live crypto prices, bitcoin price, ethereum price, solana price, dogecoin price, xrp, bnb, cardano, real-time crypto tracker, cryptocurrency dashboard">
+  <link rel="canonical" href="https://yourdomain.com/crypto-tracker">
+  <meta property="og:title" content="Live Bitcoin & Crypto Prices — Updated Every 10 Seconds">
+  <meta property="og:description" content="Real-time cryptocurrency tracker auto-refreshing every 10 seconds. See BTC, ETH, SOL, DOGE, XRP, BNB, and ADA prices, market caps, and daily change.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/crypto-tracker">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-crypto-tracker.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Bitcoin & Crypto Prices — Updated Every 10 Seconds">
+  <meta name="twitter:description" content="Auto-updating crypto dashboard tracking BTC, ETH, SOL, DOGE, XRP, BNB, and ADA every 10 seconds.">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/og-crypto-tracker.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.min.css">
+  <!-- SEO: Structured data for FinancialService -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Live Bitcoin & Crypto Prices — Updated Every 10 Seconds",
+      "description": "Real-time cryptocurrency tracker for Bitcoin, Ethereum, Solana, Dogecoin, XRP, BNB, and Cardano with auto-refresh every 10 seconds.",
+      "url": "https://yourdomain.com/crypto-tracker",
+      "operatingSystem": "All",
+      "applicationCategory": "FinanceApplication",
+      "author": {
+        "@type": "Person",
+        "name": "Zyntriax"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Zyntriax"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="background-grid"></div>
+  <header class="hero">
+    <div class="hero__badge">Live Feed</div>
+    <h1>Live Crypto Prices — Updated Every 10 Seconds</h1>
+    <p class="hero__sub">Auto-updating real-time cryptocurrency dashboard</p>
+    <div class="hero__status">
+      <span class="pulse-dot"></span>
+      <span id="status-text">Fetching latest data...</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- SEO: Supporting content sections -->
+    <section class="info-grid">
+      <div>
+        <h2>How This Live Crypto Tracker Works</h2>
+        <p>We pull fresh Bitcoin, Ethereum, Solana, Dogecoin, XRP, BNB, and Cardano prices from CoinGecko every 10 seconds. Values update instantly without page reloads so you can track momentum at a glance.</p>
+      </div>
+      <div>
+        <h2>Why Use This Dashboard</h2>
+        <p>See logos, symbols, current price, 24h change, and market cap in one responsive table. Positive movers glow green, negative moves glow red, making trends clear on desktop and mobile.</p>
+      </div>
+    </section>
+
+    <section class="table-card">
+      <div class="table-header">
+        <div>
+          <p class="small-label">Markets</p>
+          <h2>Top Movers</h2>
+        </div>
+        <button id="refresh-btn" class="ghost-button" type="button">Refresh now</button>
+      </div>
+      <div class="table-wrapper">
+        <table id="crypto-table">
+          <thead>
+            <tr>
+              <th>Coin</th>
+              <th>Symbol</th>
+              <th>Price</th>
+              <th>24h %</th>
+              <th>Market Cap</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Rows injected via JS -->
+          </tbody>
+        </table>
+        <div id="skeleton" class="skeleton">
+          <!-- Skeleton rows injected via JS -->
+        </div>
+      </div>
+      <div id="error-banner" class="error-banner" hidden></div>
+    </section>
+  </main>
+
+  <!-- SEO: FAQ section -->
+  <section class="container faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How does this tool work?</summary>
+      <p>The dashboard fetches live market data from CoinGecko every 10 seconds and updates the table without reloading.</p>
+    </details>
+    <details>
+      <summary>Is this tool free?</summary>
+      <p>Yes, the tracker is free to use and requires no sign-up.</p>
+    </details>
+    <details>
+      <summary>How often does the data update?</summary>
+      <p>Prices refresh automatically every 10 seconds. You can also click “Refresh now” for an instant update.</p>
+    </details>
+    <details>
+      <summary>Is this accurate?</summary>
+      <p>Data is sourced from CoinGecko, a widely used crypto market API. Values reflect their latest public feed.</p>
+    </details>
+  </section>
+
+  <footer class="footer">
+    <p>Data from CoinGecko · Auto-refreshes every 10 seconds</p>
+    <div class="tools-links">
+      <span>Other Tools:</span>
+      <a href="../LIVE-CRYPTO-PRICE-TRACKER/index.html" aria-current="page">Crypto Price Tracker</a>
+      <a href="../GOLD---SILVER-PRICE-TRACKER/index.html">Gold & Silver Price Tracker</a>
+      <a href="../PETROL-PRICE-TRACKER--UK-/index.html">Petrol Price Tracker</a>
+      <a href="../BMI-CALCULATOR/index.html">BMI Calculator</a>
+      <a href="../GCSE-A-LEVEL-GRADE-CALCULATOR/index.html">Grade Calculator</a>
+      <a href="../AI-NAME-GENERATOR/index.html">AI Name Generator</a>
+      <a href="../Amazon-Deal-Finder/index.html">Amazon Deal Finder</a>
+      <a href="../AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html">Product Idea Generator</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <!-- SEO: FAQ schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does this tool work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The dashboard fetches live market data from CoinGecko every 10 seconds and updates the table without reloading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this tool free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the tracker is free to use and requires no sign-up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often does the data update?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prices refresh automatically every 10 seconds, and users can click 'Refresh now' for an instant update."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Data is sourced from CoinGecko, a widely used crypto market API. Values reflect their latest public feed."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <script defer src="script.min.js"></script>
+</body>
+</html>

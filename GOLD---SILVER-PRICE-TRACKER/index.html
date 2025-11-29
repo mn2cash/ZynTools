@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Gold & Silver Prices — Spot Rates per Ounce & Gram (Auto Refresh)</title>
+  <meta name="description" content="Track live gold and silver prices per ounce and gram with 24h change, converter, and history chart. Auto-refresh every minute for accurate precious metal spot rates.">
+  <meta name="keywords" content="live gold price, live silver price, spot gold per ounce, spot gold per gram, silver price today, precious metals tracker, gold price chart, ounce to gram converter">
+  <meta property="og:title" content="Live Gold & Silver Prices — Spot Rates per Ounce & Gram">
+  <meta property="og:description" content="Real-time gold and silver spot prices with 24h change, converter, and live chart. Refreshes every minute.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:image" content="https://yourdomain.com/og-gold-silver.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Gold & Silver Prices — Spot Rates per Ounce & Gram">
+  <meta name="twitter:description" content="Live spot gold and silver pricing, converter, and chart — updated automatically every minute.">
+  <!-- Cache hint for hosts: serve with Cache-Control: public, max-age=300 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Structured data for financial tracking tool -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Live Gold & Silver Price Tracker",
+    "description": "Monitor live gold and silver prices per ounce and gram with automatic refresh, converter, and price history visualization.",
+    "url": "https://yourdomain.com/",
+    "serviceType": "Precious metals spot price tracking",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Zyntriax"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="background-glow"></div>
+  <div class="page">
+    <header class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">Live feed • Precious metals</p>
+        <h1>Gold & Silver Price Tracker — Real-Time Spot Rates</h1>
+        <p class="lede">Real-time spot prices per ounce and gram, refreshed every minute. Track movement at a glance, convert units instantly, and watch the trend line evolve live.</p>
+        <div class="hero__meta">
+          <span id="last-updated" class="pill pill-muted">Waiting for data…</span>
+          <span class="pill">Auto refresh every minute</span>
+        </div>
+      </div>
+      <div class="hero__actions">
+        <button id="refresh-btn" class="button">Refresh now</button>
+        <p id="status" class="status">Loading live prices…</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- SEO content section -->
+      <section aria-labelledby="how-it-works">
+        <h2 id="how-it-works">How to read live gold and silver prices</h2>
+        <p class="section-copy">Spot prices update each minute. The per-ounce values come directly from live feeds, while per-gram values auto-convert for quick retail or jewelry reference. The 24h change chip shows the percentage move since the last close.</p>
+      </section>
+      <section class="grid">
+        <article class="card accent" id="gold-card">
+          <div class="card__header">
+            <div>
+              <p class="label">Metal</p>
+              <h2>Gold (XAU)</h2>
+            </div>
+            <span id="gold-change" class="chip chip-muted">--%</span>
+          </div>
+          <div class="card__body">
+            <div class="price primary" id="gold-ounce">$0.00</div>
+            <p class="subline">Per ounce</p>
+            <div class="price secondary" id="gold-gram">$0.00</div>
+            <p class="subline">Per gram</p>
+          </div>
+        </article>
+
+        <article class="card accent" id="silver-card">
+          <div class="card__header">
+            <div>
+              <p class="label">Metal</p>
+              <h2>Silver (XAG)</h2>
+            </div>
+            <span id="silver-change" class="chip chip-muted">--%</span>
+          </div>
+          <div class="card__body">
+            <div class="price primary" id="silver-ounce">$0.00</div>
+            <p class="subline">Per ounce</p>
+            <div class="price secondary" id="silver-gram">$0.00</div>
+            <p class="subline">Per gram</p>
+          </div>
+        </article>
+
+        <article class="card converter-card">
+          <div class="card__header">
+            <div>
+              <p class="label">Tool</p>
+              <h2>Unit converter</h2>
+            </div>
+            <span class="chip chip-muted">1 oz = 31.1034768 g</span>
+          </div>
+          <div class="converter">
+            <label class="input-label" for="grams-input">Grams</label>
+            <div class="input-wrap">
+              <input id="grams-input" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00">
+              <span class="unit">g</span>
+            </div>
+            <label class="input-label" for="ounces-input">Ounces</label>
+            <div class="input-wrap">
+              <input id="ounces-input" type="number" inputmode="decimal" step="0.0001" min="0" placeholder="0.0000">
+              <span class="unit">oz</span>
+            </div>
+            <p class="helper">Enter either field to convert instantly.</p>
+          </div>
+        </article>
+
+        <article class="card chart-card">
+          <div class="card__header">
+            <div>
+              <p class="label">Trend</p>
+              <h2>Price history</h2>
+            </div>
+            <div class="legend">
+              <span class="legend-item"><span class="dot dot-gold"></span>Gold</span>
+              <span class="legend-item"><span class="dot dot-silver"></span>Silver</span>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="price-chart"></canvas>
+          </div>
+          <p class="helper">Live history builds as the feed refreshes each minute.</p>
+        </article>
+      </section>
+
+      <!-- Instructional section for SEO -->
+      <section aria-labelledby="how-to-use">
+        <h2 id="how-to-use">How to use the metal price tracker</h2>
+        <ul class="section-list">
+          <li>Use the refresh button for an instant fetch if you need a just-in-time quote.</li>
+          <li>Switch between grams and ounces in the converter for quick hedging or retail math.</li>
+          <li>Watch the chart accumulate points every minute to spot short-term momentum.</li>
+          <li>Leave the tab open; it auto-resumes fetching when you return.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ section for users and FAQ schema -->
+      <section aria-labelledby="faq">
+        <h2 id="faq">FAQ: Gold & silver price tracker</h2>
+        <div class="faq">
+          <details>
+            <summary>How does this tool work?</summary>
+            <p>We pull live precious metal spot data from goldprice.org endpoints, then convert ounces to grams and plot the trend line in real time.</p>
+          </details>
+          <details>
+            <summary>Is this tool free?</summary>
+            <p>Yes, it is completely free to use with no signup required.</p>
+          </details>
+          <details>
+            <summary>How often does the data update?</summary>
+            <p>The feed auto-refreshes every 60 seconds, and you can click Refresh for an on-demand update.</p>
+          </details>
+          <details>
+            <summary>Is this accurate?</summary>
+            <p>Data comes from a reputable spot pricing feed; always double-check prices before executing trades.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__links">
+        <p class="label">Other tools</p>
+        <div class="footer__grid">
+          <a href="../LIVE-CRYPTO-PRICE-TRACKER/index.html">Crypto Price Tracker</a>
+          <a href="../GOLD---SILVER-PRICE-TRACKER/index.html" aria-current="page">Gold &amp; Silver Price Tracker</a>
+          <a href="../PETROL-PRICE-TRACKER--UK-/index.html">Petrol Price Tracker</a>
+          <a href="../BMI-CALCULATOR/index.html">BMI Calculator</a>
+          <a href="../GCSE-A-LEVEL-GRADE-CALCULATOR/index.html">Grade Calculator</a>
+          <a href="../AI-NAME-GENERATOR/index.html">AI Name Generator</a>
+          <a href="../Amazon-Deal-Finder/index.html">Amazon Deal Finder</a>
+          <a href="../AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html">Product Idea Generator</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this tool work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We pull live precious metal spot data from goldprice.org endpoints, convert ounces to grams, and plot the trend line in real time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this tool free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the gold and silver tracker is free to use without any sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does the data update?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The data auto-refreshes every 60 seconds, and you can trigger a manual refresh at any time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quotes come from a reputable spot pricing feed, but verify prices before placing trades."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

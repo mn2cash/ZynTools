@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta tags for Grade Calculator -->
+  <title>Grade Calculator — GCSE &amp; A-Level Percentage to Grade Converter</title>
+  <meta name="description" content="Calculate GCSE and A-Level grades instantly from marks achieved. See your percentage, mapped grades, and explore what score you need to hit target percentages.">
+  <meta name="keywords" content="grade calculator, GCSE grades, A-Level grades, percentage to grade, exam marks, education tool">
+  <meta property="og:title" content="Grade Calculator — GCSE &amp; A-Level Percentage to Grade Converter">
+  <meta property="og:description" content="Calculate GCSE and A-Level grades instantly from marks achieved. See your percentage, mapped grades, and explore what score you need to hit target percentages.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOURDOMAIN.com/">
+  <meta property="og:image" content="https://YOURDOMAIN.com/assets/grade-calculator-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grade Calculator — GCSE &amp; A-Level Percentage to Grade Converter">
+  <meta name="twitter:description" content="Calculate GCSE and A-Level grades instantly from marks achieved. See your percentage, mapped grades, and explore what score you need to hit target percentages.">
+  <!-- Caching hint: set Cache-Control for static assets -->
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Grade Calculator — GCSE & A-Level Percentage to Grade Converter",
+    "description": "Calculate GCSE and A-Level grades instantly from marks achieved. See your percentage, mapped grades, and explore what score you need to hit target percentages.",
+    "url": "https://YOURDOMAIN.com/",
+    "operatingSystem": "All",
+    "applicationCategory": "EducationalApplication",
+    "author": "Zyntriax"
+  }
+  </script>
+</head>
+<body>
+  <div class="background-accent" aria-hidden="true"></div>
+  <div class="page">
+    <header class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">GCSE &amp; A-Level</p>
+        <h1>Grade Calculator — Convert Marks to GCSE &amp; A-Level Grades</h1>
+        <p class="lead">Enter your marks to see your percentage and predicted grades. Use the slider to check what grades align with different target percentages.</p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <div class="card__header">
+          <h2>Current Marks &amp; Grades</h2>
+          <p>Instantly calculate your score and grades.</p>
+        </div>
+        <div class="inputs">
+          <label class="field">
+            <span>Total marks</span>
+            <input id="totalMarks" type="number" min="1" step="1" placeholder="e.g. 120" value="100">
+          </label>
+          <label class="field">
+            <span>Marks achieved</span>
+            <input id="achievedMarks" type="number" min="0" step="1" placeholder="e.g. 85" value="75">
+          </label>
+        </div>
+        <div class="results">
+          <div class="result">
+            <p class="label">Percentage</p>
+            <p class="value" id="percentOutput">--%</p>
+          </div>
+          <div class="result">
+            <p class="label">GCSE Grade</p>
+            <p class="value" id="gcseOutput">--</p>
+          </div>
+          <div class="result">
+            <p class="label">A-Level Grade</p>
+            <p class="value" id="alevelOutput">--</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <h2>What Grade Do I Need to Get X%?</h2>
+          <p>Slide to pick a target percentage and see the equivalent grades.</p>
+        </div>
+        <div class="slider-block">
+          <div class="slider-row">
+            <label for="targetPercent">Target percentage</label>
+            <div class="slider-value" id="targetPercentLabel">70%</div>
+          </div>
+          <input id="targetPercent" type="range" min="0" max="100" value="70" step="1">
+        </div>
+        <div class="results results--compact">
+          <div class="result">
+            <p class="label">GCSE Grade</p>
+            <p class="value" id="targetGcseOutput">--</p>
+          </div>
+          <div class="result">
+            <p class="label">A-Level Grade</p>
+            <p class="value" id="targetAlevelOutput">--</p>
+          </div>
+          <div class="result">
+            <p class="label">Marks needed</p>
+            <p class="value" id="targetMarksOutput">--</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="info card">
+      <div class="card__header">
+        <h2>How To Use the Grade Calculator</h2>
+        <p>Enter the total marks for your exam and the marks you achieved. The calculator shows your percentage and translates it to GCSE and A-Level grades.</p>
+      </div>
+      <div class="info__content">
+        <h3>Why percentages matter</h3>
+        <p>Percentages make it easy to compare performance across different exams and boards, ensuring grades are consistent.</p>
+        <h3>Exam grading scales</h3>
+        <p>GCSE grades run from 9 to 1, while A-Level grades use A* to U. The thresholds used here are common benchmarks and can be adjusted by your school or board.</p>
+      </div>
+    </section>
+
+    <section class="faq card" id="faq">
+      <div class="card__header">
+        <h2>FAQs</h2>
+        <p>Quick answers about this grade calculator.</p>
+      </div>
+      <div class="faq__items">
+        <details>
+          <summary>How does this tool work?</summary>
+          <p>Enter total and achieved marks to calculate a percentage. The tool maps that percentage to common GCSE and A-Level grade boundaries.</p>
+        </details>
+        <details>
+          <summary>Is this tool free?</summary>
+          <p>Yes, this grade calculator is completely free to use without sign-ups.</p>
+        </details>
+        <details>
+          <summary>How often does the data update?</summary>
+          <p>Calculations update instantly as you change your marks or target percentage slider.</p>
+        </details>
+        <details>
+          <summary>Is this accurate?</summary>
+          <p>The tool uses typical grade thresholds. Always confirm with your school or exam board for official boundaries.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__links">
+        <strong>Other Tools:</strong>
+        <a href="../LIVE-CRYPTO-PRICE-TRACKER/index.html">Crypto Price Tracker</a>
+        <a href="../GOLD---SILVER-PRICE-TRACKER/index.html">Gold & Silver Price Tracker</a>
+        <a href="../PETROL-PRICE-TRACKER--UK-/index.html">Petrol Price Tracker</a>
+        <a href="../BMI-CALCULATOR/index.html">BMI Calculator</a>
+        <a href="../GCSE-A-LEVEL-GRADE-CALCULATOR/index.html" aria-current="page">Grade Calculator</a>
+        <a href="../AI-NAME-GENERATOR/index.html">AI Name Generator</a>
+        <a href="../Amazon-Deal-Finder/index.html">Amazon Deal Finder</a>
+        <a href="../AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html">Product Idea Generator</a>
+      </div>
+      <p>Pastel, responsive, and ready for quick grade checks.</p>
+    </footer>
+  </div>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this tool work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter total and achieved marks to calculate a percentage. The tool maps that percentage to common GCSE and A-Level grade boundaries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this tool free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this grade calculator is completely free to use without sign-ups."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does the data update?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Calculations update instantly as you change your marks or target percentage slider."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool uses typical grade thresholds. Always confirm with your school or exam board for official boundaries."
+        }
+      }
+    ]
+  }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

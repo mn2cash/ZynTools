@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Idea Generator — AI Startup, App, and SaaS Concepts</title>
+  <meta name="description" content="Instantly spin up AI-powered product ideas with descriptions and monetization angles across apps, websites, games, and businesses. Save favorites and inspire your next build.">
+  <meta name="keywords" content="product idea generator, startup ideas, app ideas, business ideas, AI tools, SaaS ideas, idea generator">
+  <meta http-equiv="Cache-Control" content="public, max-age=604800">
+  <meta property="og:title" content="Product Idea Generator — AI Startup, App, and SaaS Concepts">
+  <meta property="og:description" content="Generate unique product ideas with monetization tips across apps, websites, games, and businesses. Save your favorites for your next build.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/product-idea-generator">
+  <meta property="og:image" content="https://yourdomain.com/assets/product-idea-generator-card.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Idea Generator — AI Startup, App, and SaaS Concepts">
+  <meta name="twitter:description" content="Spin up product ideas instantly with descriptions and monetization methods. Save the best concepts to build later.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- SEO schema for creative generator -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Product Idea Generator",
+      "description": "AI-powered generator that creates product, startup, and app ideas with descriptions and monetization methods.",
+      "url": "https://yourdomain.com/product-idea-generator",
+      "operatingSystem": "All",
+      "applicationCategory": "CreativeWorkGenerator",
+      "author": "Zyntriax"
+    }
+  </script>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+  </div>
+  <header class="site-header">
+    <div class="logo">
+      <div class="spark">✦</div>
+      <div>
+        <p class="eyebrow">Prompt 9</p>
+        <h1>Product Idea Generator — AI Startup & App Concepts</h1>
+      </div>
+    </div>
+    <p class="tagline">Spin up bold product sparks across apps, sites, businesses, games, and AI. Save favorites to build later with monetization in mind.</p>
+  </header>
+
+  <main class="layout">
+    <section class="card controls">
+      <div class="card-header">
+        <p class="eyebrow">Pick a lane</p>
+        <h2>Choose a category</h2>
+      </div>
+      <div class="pill-group" id="categoryPills" role="listbox" aria-label="Idea categories">
+        <button class="pill active" data-category="apps">Apps</button>
+        <button class="pill" data-category="websites">Websites</button>
+        <button class="pill" data-category="businesses">Businesses</button>
+        <button class="pill" data-category="games">Games</button>
+        <button class="pill" data-category="aiTools">AI tools</button>
+      </div>
+      <div class="actions">
+        <button id="generateBtn" class="btn primary">Generate idea</button>
+        <button id="saveBtn" class="btn ghost" disabled>Save idea</button>
+      </div>
+    </section>
+
+    <section class="card output" aria-live="polite">
+      <div class="card-header">
+        <p class="eyebrow">Fresh drop</p>
+        <h2>Idea details</h2>
+      </div>
+      <div class="idea">
+        <p class="label">Idea</p>
+        <h3 id="ideaTitle">Waiting for your spin...</h3>
+      </div>
+      <div class="idea">
+        <p class="label">Description</p>
+        <p id="ideaDescription" class="muted">Hit generate to craft something surprising.</p>
+      </div>
+      <div class="idea">
+        <p class="label">Monetization</p>
+        <p id="ideaMonetization" class="muted">We will suggest a business angle for you.</p>
+      </div>
+    </section>
+
+    <section class="card guide">
+      <div class="card-header">
+        <p class="eyebrow">Workflow</p>
+        <h2>How to use this product idea generator</h2>
+      </div>
+      <div class="guide-body">
+        <h3>1) Pick a category</h3>
+        <p>Choose whether you want app ideas, AI tools, games, websites, or business concepts.</p>
+        <h3>2) Generate and refine</h3>
+        <p>Tap generate to get a fresh concept with a concise description and monetization angle.</p>
+        <h3>3) Save your favorites</h3>
+        <p>Store standout ideas in your vault so you can revisit or share them later.</p>
+      </div>
+    </section>
+
+    <section class="card saved">
+      <div class="card-header">
+        <p class="eyebrow">Your vault</p>
+        <h2>Saved ideas</h2>
+      </div>
+      <ul id="savedList" class="saved-list">
+        <li class="muted">Nothing saved yet. Store your favorites when inspiration hits.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FAQ section with structured data for SEO -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <h2>Product Idea Generator FAQ</h2>
+      <details>
+        <summary>How does this tool work?</summary>
+        <p>It selects a random idea template in your chosen category and displays it with a description plus monetization angle.</p>
+      </details>
+      <details>
+        <summary>Is this tool free?</summary>
+        <p>Yes, you can generate and save ideas locally without creating an account.</p>
+      </details>
+      <details>
+        <summary>How often does the data update?</summary>
+        <p>Ideas refresh every time you click generate, pulling from curated idea pools.</p>
+      </details>
+      <details>
+        <summary>Is this accurate?</summary>
+        <p>The concepts are crafted to inspire you, but validate each idea with your own market research.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer with internal links to related tools for SEO -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="eyebrow">Other tools</p>
+      <nav class="footer-links">
+        <a href="../LIVE-CRYPTO-PRICE-TRACKER/index.html">Crypto Price Tracker</a>
+        <a href="../GOLD---SILVER-PRICE-TRACKER/index.html">Gold &amp; Silver Price Tracker</a>
+        <a href="../PETROL-PRICE-TRACKER--UK-/index.html">Petrol Price Tracker</a>
+        <a href="../BMI-CALCULATOR/index.html">BMI Calculator</a>
+        <a href="../GCSE-A-LEVEL-GRADE-CALCULATOR/index.html">Grade Calculator</a>
+        <a href="../AI-NAME-GENERATOR/index.html">AI Name Generator</a>
+        <a href="../Amazon-Deal-Finder/index.html">Amazon Deal Finder</a>
+        <a href="../AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html" aria-current="page">Product Idea Generator</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does this tool work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It selects a random idea template in your chosen category and displays it with a description plus monetization angle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this tool free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can generate and save ideas locally without creating an account."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often does the data update?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ideas refresh every time you click generate, pulling from curated idea pools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The concepts are crafted to inspire you, but validate each idea with your own market research."
+          }
+        }
+      ]
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta -->
+  <title>UK Petrol Price Tracker - Live Fuel Prices, Daily and Weekly Changes</title>
+  <meta name="description" content="Track UK petrol and diesel prices with daily and weekly differences. See unleaded 95, super 99, diesel and premium diesel averages, a price history chart, and nearby stations placeholder.">
+  <meta name="keywords" content="UK petrol prices, diesel price tracker, unleaded 95, super unleaded 99, premium diesel, fuel price history, fuel price graph, UK fuel map, fuel tracker UK">
+  <meta name="author" content="Zyntriax">
+  <meta name="theme-color" content="#0f1623">
+  <!-- Open Graph -->
+  <meta property="og:title" content="UK Petrol Price Tracker - Live Fuel Prices and Trends">
+  <meta property="og:description" content="See UK petrol and diesel averages with yesterday and weekly changes, a price history chart, and nearby station placeholders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/social-card.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UK Petrol Price Tracker - Live Fuel Prices and Trends">
+  <meta name="twitter:description" content="Daily and weekly UK fuel price updates with history chart and nearby station placeholders.">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://example.com/">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f1623'/%3E%3Cpath d='M20 20h12v-4h4v4h8v4h-4l-2 24H24l-2-24h-2z' fill='%234ade80'/%3E%3Cpath d='M28 32h4v16h-4z' fill='%23f87171'/%3E%3C/svg%3E">
+  <!-- Cache hint: serve static assets with Cache-Control: public, max-age=31536000 -->
+  <link rel="preload" href="styles.min.css" as="style">
+  <link rel="stylesheet" href="styles.min.css">
+  <script src="chart.umd.min.js" defer></script>
+  <script src="script.min.js" defer></script>
+  <!-- Structured data: FinancialService schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "UK Petrol Price Tracker",
+    "description": "Live UK petrol and diesel prices with daily and weekly differences, unleaded 95/99, diesel and premium diesel averages, map placeholder, and price history chart.",
+    "url": "https://example.com/",
+    "operatingSystem": "All",
+    "applicationCategory": "FinanceApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Zyntriax"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">
+      <div class="brand-mark">&pound;</div>
+      <div>
+        <p class="eyebrow">Live-style demo - UK</p>
+        <h1>UK Petrol Price Tracker - Live Fuel Prices</h1>
+      </div>
+    </div>
+    <div class="status">
+      <span class="pulse"></span>
+      <p>Auto-fetching fuel averages</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Retail averages</p>
+        <h2>Track UK petrol and diesel prices with daily and weekly changes</h2>
+        <p class="lede">Unleaded 95, Super 99, Diesel, and Premium Diesel with day-on-day and week-on-week change. Data auto-pulled from a free JSON mirror for demo purposes.</p>
+        <div class="badges">
+          <span class="badge badge-green">Dark theme</span>
+          <span class="badge badge-red">Red/Green deltas</span>
+          <span class="badge">Responsive</span>
+        </div>
+      </div>
+      <div class="last-updated">
+        <p class="label">Last updated</p>
+        <p id="updatedAt" class="value">--</p>
+      </div>
+    </section>
+
+    <section class="cards-grid" id="fuelCards">
+      <!-- Fuel cards injected by script -->
+    </section>
+
+    <section class="layout-grid">
+      <article class="card map-card">
+        <header>
+          <div>
+            <p class="eyebrow">Map</p>
+            <h3>Nearby Cheapest Stations</h3>
+          </div>
+          <span class="badge badge-ghost">Placeholder</span>
+        </header>
+        <div class="map-placeholder">
+          <div class="map-label">Map placeholder</div>
+        </div>
+        <ul class="station-list" id="stationList">
+          <!-- Demo stations injected by script -->
+        </ul>
+      </article>
+
+      <article class="card chart-card">
+        <header>
+          <div>
+            <p class="eyebrow">Trend</p>
+            <h3>Weekly Price History</h3>
+          </div>
+          <span class="badge badge-ghost">7-day view</span>
+        </header>
+        <div class="chart-shell">
+          <canvas id="historyChart" aria-label="Weekly fuel price history" role="img"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="meta-grid">
+      <div class="card">
+        <p class="eyebrow">Coverage</p>
+        <p>Prices shown are national averages per litre. Week-on-week change compares to the value 7 days earlier.</p>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Source</p>
+        <p>Demo fetches from a free static JSON mirror. If remote data is unavailable, offline demo data renders automatically.</p>
+      </div>
+      <div class="card">
+        <p class="eyebrow">How to read</p>
+        <p>Green indicates a price decrease (good news), red indicates an increase. Values in pence per litre.</p>
+      </div>
+    </section>
+
+    <section class="faq card" id="faq">
+      <p class="eyebrow">FAQ</p>
+      <h2>Frequently Asked Questions about this Petrol Price Tracker</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How does this tool work?</summary>
+          <p>The tracker fetches fuel price averages from a demo JSON mirror, then calculates day-on-day and week-on-week deltas and plots them on the history chart.</p>
+        </details>
+        <details>
+          <summary>Is this tool free?</summary>
+          <p>Yes, this demo tracker is free to use and requires no signup.</p>
+        </details>
+        <details>
+          <summary>How often does the data update?</summary>
+          <p>In production you can point the fetch URL to an hourly or daily feed; the demo data refreshes every page load.</p>
+        </details>
+        <details>
+          <summary>Is this accurate?</summary>
+          <p>The demo data is illustrative. For accuracy, connect to a trusted UK fuel price feed or CSV mirror.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>UK Petrol Price Tracker - Built for fast reference.</p>
+    <div class="other-tools">
+      <span>Other tools:</span>
+      <a href="../LIVE-CRYPTO-PRICE-TRACKER/index.html">Crypto Price Tracker</a>
+      <a href="../GOLD---SILVER-PRICE-TRACKER/index.html">Gold & Silver Price Tracker</a>
+      <a href="../PETROL-PRICE-TRACKER--UK-/index.html" aria-current="page">Petrol Price Tracker</a>
+      <a href="../BMI-CALCULATOR/index.html">BMI Calculator</a>
+      <a href="../GCSE-A-LEVEL-GRADE-CALCULATOR/index.html">Grade Calculator</a>
+      <a href="../AI-NAME-GENERATOR/index.html">AI Name Generator</a>
+      <a href="../Amazon-Deal-Finder/index.html">Amazon Deal Finder</a>
+      <a href="../AI-RANDOM-PRODUCT-IDEA-GENERATOR/index.html">Product Idea Generator</a>
+    </div>
+  </footer>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this tool work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tracker fetches fuel price averages from a demo JSON mirror, calculates daily and weekly deltas, and plots them on the history chart."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this tool free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this demo tracker is free to use and requires no signup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does the data update?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In production you can point the fetch URL to an hourly or daily feed; the demo data refreshes every page load."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The demo data is illustrative. For accuracy, connect to a trusted UK fuel price feed or CSV mirror."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
