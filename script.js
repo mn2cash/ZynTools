@@ -1,4 +1,4 @@
-﻿const tools = [
+const tools = [
   { name: "Live Crypto Tracker", slug: "./LIVE-CRYPTO-PRICE-TRACKER/index.html", icon: "🪙", type: "tracker" },
   { name: "Gold & Silver Price Tracker", slug: "./GOLD---SILVER-PRICE-TRACKER/index.html", icon: "🥇", type: "tracker" },
   { name: "Currency Converter", slug: "./currency/index.html", icon: "💱", type: "converter" },
